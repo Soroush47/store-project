@@ -1,3 +1,5 @@
+/* 832258    bacddc    eae2d6*/
+
 .container {
     display: flex;
     margin-bottom: 60px;
@@ -6,11 +8,13 @@
 
 .container input {
     padding: 8px 10px;
-    border: dotted #ff4b2e 3px;
-    color: #2a2a2a;
+    border: dotted #832258 2px;
+    color: #832258;
+    background-color: #f1ece8;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 18px;
     width: 240px;
+    font-weight: 500;
 }
 
 .container input:focus {
@@ -18,10 +22,10 @@
 }
 
 .search {
-    background-color: #f44f34;
-    color: #f2f2f2;
+    background-color: #832258;
+    color: #eae2d6;
     margin-left: 15px;
-    font-size: 38px;
+    font-size: 37px;
     padding: 7px;
     border-radius: 8px;
     cursor: pointer;

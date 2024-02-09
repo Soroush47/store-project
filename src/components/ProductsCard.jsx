@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import { TbListDetails as Details, TbShoppingCartPlus as Shopping } from "react-icons/tb";
 import { FaMinus as Minus, FaPlus as Plus } from "react-icons/fa";
+import { IoMdPricetag as Price } from "react-icons/io";
 
 import { useProducts } from "../context/ProductsProvider";
 import styles from "./ProductsCard.module.css";
@@ -25,7 +26,10 @@ function ProductsCard({ data: product }) {
         <div className={styles.container}>
             <img src={product.image} alt="no image" />
             <p>{product.title}</p>
-            <span>{product.price} $</span>
+            <span>
+                <Price className={styles.price} />
+                {product.price} $
+            </span>
             <div className={styles.functions}>
                 <Link to={product.id.toString()}>
                     <Details className={styles.details} />

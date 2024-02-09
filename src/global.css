@@ -8,7 +8,7 @@ body {
     max-width: 1200px;
     min-height: 110vh;
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: #bacddc;
 }
 
 * {
@@ -20,8 +20,4 @@ body {
 a {
     text-decoration: inherit;
     color: inherit;
-}
-
-button {
-    cursor: pointer;
 }

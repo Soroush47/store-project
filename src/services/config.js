@@ -15,6 +15,7 @@ api.interceptors.response.use(
                     ...product,
                     title: getTitle(product.title),
                     count: 0,
+                    image: `/src/assets/${product.id}.jpg`,
                 };
             });
             return products;

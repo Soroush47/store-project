@@ -1,8 +1,11 @@
+/* 832258    bacddc    eae2d6*/
+/* ebdfc7   162843 */
+
 .container {
-    background-color: #f44f34;
+    background-color: #832258;
     border-radius: 15px;
     padding: 10px 20px;
-    color: #fff;
+    color: #eae2d6;
     margin-bottom: 80px;
     display: flex;
     justify-content: space-between;
@@ -15,8 +18,8 @@
 }
 
 .basket {
-    background-color: #f4f4f4;
-    color: #f44f34;
+    background-color: #eae2d6;
+    color: #832258;
     font-size: 38px;
     padding: 7px;
     border-radius: 8px;

@@ -1,32 +1,41 @@
+/* 832258    bacddc    eae2d6*/
+
 .container {
-    background-color: #fff;
-    border: dotted 3px #cfcfcf;
+    background-color: #eae2d6;
+    border: solid 2px #832258;
     border-radius: 18px;
-    width: 260px;
+    width: 280px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .container img {
     height: 200px;
     width: 170px;
     border-radius: 5px;
-    margin: 20px auto;
+    margin: 20px auto 30px;
 }
 
 .container p {
-    color: #f44f34;
+    display: flex;
+    justify-content: center;
+    color: #832258;
     font-weight: 700;
-    font-size: 20px;
-    margin-left: 20px;
+    font-size: 18px;
+    /* margin-left: 20px; */
+}
+
+.price {
+    color: #832258;
+    margin-right: 7px;
 }
 
 .container span {
     color: #414141;
     font-weight: 500;
     font-size: 16px;
-    margin: 10px 0px 25px 20px;
+    margin: 25px 0px 20px 30px;
 }
 
 .functions {
@@ -37,7 +46,7 @@
 }
 
 .functions a {
-    height: 20px;
+    height: 27px;
 }
 
 .buttons {
@@ -48,7 +57,7 @@
 }
 
 .button {
-    background-color: #f44f34;
+    background-color: #832258;
     color: #fff;
     border-radius: 6px;
     padding: 7px;
@@ -57,12 +66,12 @@
 }
 
 .details {
-    color: #f44f34;
-    font-size: 20px;
+    color: #832258;
+    font-size: 24px;
 }
 
 .shopping {
-    background-color: #f44f34;
+    background-color: #832258;
     color: #fff;
     font-size: 25px;
     cursor: pointer;
