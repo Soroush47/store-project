@@ -1,101 +1,101 @@
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+
+import { useProducts } from "../context/ProductsProvider";
+
 import Categories from "../components/Categories";
-import NavBar from "../components/NavBar";
+import Loader from "../components/Loader";
 import ProductsCard from "../components/ProductsCard";
 import Search from "../components/Search";
-import { useProducts } from "../context/ProductsProvider";
+
 import styles from "./ProductsPage.module.css";
 
 function ProductsPage() {
-    const {
-        searchProducts: [, searchProducts],
-        categories,
-        loading,
-        dispatch,
-    } = useProducts();
+    console.log("products page");
+
+    const { products, searchProducts, query: queryState, dispatch } = useProducts();
+
+    const [query, setQuery] = useState(queryState);
+
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    useEffect(() => {
+        // console.log("products page use effect");
+
+        const search = searchParams.get("search");
+        const category = searchParams.get("category");
+
+        let newQuery = { ...query };
+        // console.log({
+        //     search,
+        //     qsearch: queryState.search,
+        //     category,
+        //     qcategory: queryState.category,
+        // });
+        if (search != queryState.search && category != queryState.category) {
+            if (search || category) {
+                // reload
+                search && (newQuery.search = search);
+                category && (newQuery.category = category);
+                setQuery(newQuery);
+                Object.keys(products).length &&
+                    dispatch({ type: "FILTER", payload: newQuery });
+                console.log("Filter 1");
+            } else if (query.search || query.category) {
+                // back to products page
+                query.search && searchParams.set("search", query.search);
+                query.category && searchParams.set("category", query.category);
+                setSearchParams(searchParams);
+                // dispatch({ type: "FILTER", payload: query }); //////////////
+                console.log("Filter 2");
+            } else {
+                console.log("NoFilter", { products });
+                // dispatch({ type: "NOFILTER", payload: Object.values(products) }); //////////////
+            }
+        }
+    }, [products]);
+
+    const filterHandler = ({ name, value }) => {
+        if (value !== "") {
+            searchParams.set(name, value);
+        } else searchParams.delete(name);
+
+        let newQuery = { ...query, [name]: value };
+
+        setQuery(newQuery);
+        setSearchParams(searchParams);
+        dispatch({ type: "FILTER", payload: newQuery });
+    };
+
+    const showProducts =
+        !query.search && !query.category ? Object.values(products) : searchProducts;
+
+    // console.log({ products, searchProducts, showProducts });
 
     return (
         <>
-            <NavBar />
-            <Search />
+            <Search
+                searchParams={searchParams}
+                setSearchParams={setSearchParams}
+                query={query}
+                setQuery={filterHandler}
+            />
             <div className={styles.container}>
                 <div className={styles.products}>
-                    {loading ? (
-                        <p>loading...</p>
-                    ) : (
-                        searchProducts.map(product => (
-                            <ProductsCard key={product.id} data={product} />
-                        ))
-                    )}
+                    {!Object.keys(products).length && <Loader />}
+                    {showProducts.map(product => (
+                        <ProductsCard key={product.id} data={product} />
+                    ))}
                 </div>
-                <Categories categories={categories} dispatch={dispatch} />
+                <Categories
+                    searchParams={searchParams}
+                    setSearchParams={setSearchParams}
+                    query={query}
+                    setQuery={filterHandler}
+                />
             </div>
         </>
     );
 }
 
 export default ProductsPage;
-
-/*
-https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg
-
-1 :
-81fPKd-2AYL._AC_SL1500_.jpg
-
-2 :
-71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg
-
-3
-: 
-71li-ujtlUL._AC_UX679_.jpg"
-4
-: 
-"71YXzeOuslL._AC_UY879_.jpg"
-5
-: 
-"71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
-6
-: 
-"61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg"
-7
-: 
-"71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
-8
-: 
-"51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
-9
-: 
-"61IBBVJvSDL._AC_SY879_.jpg"
-10
-: 
-"61U7T1koQqL._AC_SX679_.jpg"
-11
-: 
-"71kWymZ+c+L._AC_SX679_.jpg"
-12
-: 
-"61mtL65D4cL._AC_SX679_.jpg"
-13
-: 
-"81QpkIctqPL._AC_SX679_.jpg"
-14
-: 
-"81Zt42ioCgL._AC_SX679_.jpg"
-15
-: 
-"51Y5NI-I5jL._AC_UX679_.jpg"
-16
-: 
-"81XH0e8fefL._AC_UY879_.jpg"
-17
-: 
-"71HblAHs5xL._AC_UY879_-2.jpg"
-18
-: 
-"71z3kpMAYsL._AC_UY879_.jpg"
-19
-: 
-"51eg55uWmdL._AC_UX679_.jpg"
-20
-: 
-"61pHAEJ4NML._AC_UX679_.jpg"
-*/

@@ -1,8 +1,10 @@
-import NavBar from "../components/NavBar";
 import { useProducts } from "../context/ProductsProvider";
 import styles from "./CheckoutPage.module.css";
 import { FaMinus as Minus, FaPlus as Plus } from "react-icons/fa";
 import { RiDeleteBin5Line as Delete } from "react-icons/ri";
+import { MdOutlineProductionQuantityLimits as Quantity } from "react-icons/md";
+import { IoCheckmarkCircle as Check } from "react-icons/io5";
+import { TbChecklist } from "react-icons/tb";
 
 function CheckoutPage() {
     const { totalCost, totalItems, chosenProducts, dispatch } = useProducts();
@@ -14,7 +16,7 @@ function CheckoutPage() {
 
     const dispatchHandler = (id, count) => {
         dispatch({
-            type: "INCREASE",
+            type: "CHANGE",
             payload: {
                 id,
                 count,
@@ -24,16 +26,36 @@ function CheckoutPage() {
 
     return (
         <>
-            <NavBar />
-            <div className={styles.container}>
-                <div className={styles.details}>
-                    <p>Total: {totalCost} $</p>
-                    <p>Quantity: {totalItems}</p>
-                    <p>Status: pending...</p>
-                </div>
-                <div className={styles.products}>
-                    {!!Object.keys(chosenProducts).length &&
-                        Object.values(chosenProducts).map(product => (
+            {!!Object.keys(chosenProducts).length ? (
+                <div className={styles.container}>
+                    <div className={styles.details}>
+                        <p>
+                            <span>
+                                <TbChecklist className={styles.icon} />
+                                Total:
+                            </span>
+                            {totalCost} $
+                        </p>
+                        <p>
+                            <span>
+                                <Quantity className={styles.icon} />
+                                Quantity:
+                            </span>
+                            {totalItems}
+                        </p>
+                        <p>
+                            <span>
+                                <Check className={styles.icon} />
+                                Status:
+                            </span>
+                            pending...
+                        </p>
+                        <button onClick={() => dispatch({ type: "CHECKOUT" })}>
+                            Checkout
+                        </button>
+                    </div>
+                    <div className={styles.products}>
+                        {Object.values(chosenProducts).map(product => (
                             <div className={styles.product} key={product.id}>
                                 <img src={product.image} alt="no image" />
                                 <p>{product.title} </p>
@@ -66,8 +88,11 @@ function CheckoutPage() {
                                 </div>
                             </div>
                         ))}
+                    </div>
                 </div>
-            </div>
+            ) : (
+                <div className={styles.empty}> <span>Your basket is empty!</span> </div>
+            )}
         </>
     );
 }

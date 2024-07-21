@@ -1,17 +1,32 @@
-import styles from "./Categories.module.css";
+import { FaListUl } from "react-icons/fa";
 
-function Categories({ categories, dispatch }) {
+import styles from "./Categories.module.css";
+import { useProducts } from "../context/ProductsProvider";
+
+function Categories({ query: {category}, setQuery }) {
+    const {
+        categories,
+    } = useProducts();
+
+    const searchHandler = cat => {
+        category !== cat && setQuery({ name: "category", value: cat });
+    };
+
     return (
         <div className={styles.container}>
-            <h3>Categories</h3>
-            {categories[1].map((cat, index) => {
+            <h3>
+                <FaListUl className={styles.listIcon} /> Categories
+            </h3>
+            {categories.map((cat, index) => {
                 return (
                     <p
                         key={index}
-                        onClick={() => dispatch({ type: "CATEGORY", payload: cat })}
-                        className={categories[0] === cat ? styles.selected : styles.hover}
+                        onClick={() => searchHandler(cat)}
+                        className={
+                            category === cat ? styles.selected : styles.hover
+                        }
                     >
-                        {cat === "all"
+                        {cat === ""
                             ? "All"
                             : cat // toUpperCaseFirstLetter
                                   .split(" ")

@@ -1,41 +1,47 @@
 /* 832258    bacddc    eae2d6*/
+/* ebdfc7   162843 */
 
 .container {
-    background-color: #eae2d6;
-    border: solid 2px #832258;
+    background-color: #fefbf4; /*f9f3e4*/
+    /* border: solid 1px #162843; */
     border-radius: 18px;
     width: 280px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
+    margin: 0px 5px 40px 0px;
+    box-shadow: 0px 0px 15px 5px #16284325;
 }
 
 .container img {
     height: 200px;
-    width: 170px;
+    width: 180px;
+    /* mix-blend-mode: darken; remove backgroud */
     border-radius: 5px;
     margin: 20px auto 30px;
 }
 
-.container p {
-    display: flex;
-    justify-content: center;
-    color: #832258;
-    font-weight: 700;
-    font-size: 18px;
-    /* margin-left: 20px; */
+.container h3 {
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-left: 20px;
+    color: #000;
+    font-size: 19px;
+    height: 40px;
 }
 
 .price {
-    color: #832258;
-    margin-right: 7px;
-}
-
-.container span {
-    color: #414141;
+    color: #000; /*414141 cf4366*/
     font-weight: 500;
     font-size: 16px;
-    margin: 25px 0px 20px 30px;
+    margin: 15px 0px 35px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.priceTag {
+    color: #000;
+    margin-right: 3px;
+    font-size: 17px;
 }
 
 .functions {
@@ -57,24 +63,51 @@
 }
 
 .button {
-    background-color: #832258;
-    color: #fff;
+    background-color: #d44267;
+    color: #fefbf4; /*f1e8cf 162843*/
     border-radius: 6px;
-    padding: 7px;
+    padding: 6px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: #d44267;
+    color: #fefbf4; /*f1e8cf 162843*/
+    border-radius: 6px;
+    padding: 4px;
     font-size: 25px;
     cursor: pointer;
 }
 
 .details {
-    color: #832258;
+    color: #d44267;
     font-size: 24px;
 }
 
 .shopping {
-    background-color: #832258;
-    color: #fff;
+    background-color: #d44267; /*162843 ed4b74 cd3a5f*/
+    color: #fefbf4; /*ffaec1 f1e8cf fefbf4*/
     font-size: 25px;
     cursor: pointer;
     border-radius: 6px;
-    padding: 3px;
+    padding: 2px;
+}
+
+.buttons span {
+    color: #000; /*414141 cf4366*/
+    font-weight: 500;
+    font-size: 16px;
+}
+
+@media (max-width: 516px){
+    .container{
+        width: calc(100% - 5px);
+    }
+}
+
+@media (max-width: 440px){
+    .container{
+        width: 203px;
+    }
 }

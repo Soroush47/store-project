@@ -1,4 +1,5 @@
 /* 832258    bacddc    eae2d6*/
+/* ebdfc7   162843 */
 
 .container {
     display: flex;
@@ -8,9 +9,9 @@
 
 .container input {
     padding: 8px 10px;
-    border: dotted #832258 2px;
-    color: #832258;
-    background-color: #f1ece8;
+    border: solid #162843 2px;
+    color: #162843;
+    background-color: #ffffff; /*faf5e8*/
     border-radius: 10px;
     font-size: 18px;
     width: 240px;
@@ -22,15 +23,17 @@
 }
 
 .search {
-    background-color: #832258;
-    color: #eae2d6;
+    background-color: #000; /*162843*/
+    color: #fff; /*faf5e8 ffadc8*/
     margin-left: 15px;
     font-size: 37px;
     padding: 7px;
     border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0px 0px 5px 1px #16284345;
 }
 
 .search:hover {
-    padding: 5px;
+    /* padding: 5px; */
+    box-shadow: 0px 0px 7px 4px #16284345;
 }

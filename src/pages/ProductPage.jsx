@@ -1,46 +1,47 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { BiCategoryAlt as Category } from "react-icons/bi";
 import { IoMdPricetag as Price } from "react-icons/io";
 import { IoArrowBackOutline as Back } from "react-icons/io5";
 
-import NavBar from "../components/NavBar";
-import { useProducts } from "../context/ProductsProvider";
-
+import { useProductsDetails } from "../context/ProductsProvider";
 import styles from "./ProductPage.module.css";
+import Loader from "../components/Loader";
 
 function ProductPage() {
-    const { products } = useProducts();
     const { id } = useParams();
-    const navigate = useNavigate();
-
-    const product = products[id];
-    // const title = product.title.split(" ");
-
+    const product = useProductsDetails(id);
     return (
         <>
-            <NavBar />
-            <div className={styles.container}>
-                <img src={product.image} alt="no image" />
-                <div className={styles.details}>
-                    <h2>{product.title}</h2>
-                    <p className={styles.description}>{product.description}</p>
-                    <div>
-                        <Category className={styles.icon} />
-                        {product.category}
-                    </div>
-                    <div className={styles.price}>
-                        <p>
-                            <Price className={styles.icon} />
-                            {product.price}
-                        </p>
-                        <span onClick={() => navigate("/products", { replace: true })}>
-                            <Back className={styles.backIcon} />
-                            Back to Shop
-                        </span>
+            {!product ? (
+                <Loader />
+            ) : (
+                <div className={styles.container}>
+                    <img src={product.image} alt="no image" />
+                    <div className={styles.details}>
+                        <div className={styles.description}>
+                            <h2>{product.title}</h2>
+                            <p>{product.description}</p>
+                        </div>
+                        <div className={styles.footer}>
+                            <div className={styles.icons}>
+                                <div>
+                                    <Category className={styles.icon} />
+                                    {product.category}
+                                </div>
+                                <div>
+                                    <Price className={styles.icon} />
+                                    {product.price} $
+                                </div>
+                            </div>
+                            <Link to="/products" replace className={styles.link}>
+                                <Back className={styles.backIcon} />
+                                Back to Shop
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
         </>
     );
 }

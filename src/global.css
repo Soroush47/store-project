@@ -6,9 +6,9 @@
 body {
     margin: auto;
     max-width: 1200px;
-    min-height: 110vh;
+    min-height: 100vh;
     padding: 10px;
-    background-color: #bacddc;
+    background-color: #ffe8e4;
 }
 
 * {
