@@ -8,7 +8,6 @@ import { FaBasketShopping as Basket } from "react-icons/fa6";
 function Layout({ children }) {
     const { totalItems } = useProducts();
 
-
     return (
         <div className={styles.container}>
             <div>
