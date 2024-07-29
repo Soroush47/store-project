@@ -5,6 +5,7 @@ import { IoMdPricetag as Price } from "react-icons/io";
 import { IoArrowBackOutline as Back } from "react-icons/io5";
 
 import { useProductsDetails } from "../context/ProductsProvider";
+import images from "../constants/images";
 import styles from "./ProductPage.module.css";
 import Loader from "../components/Loader";
 
@@ -17,7 +18,7 @@ function ProductPage() {
                 <Loader />
             ) : (
                 <div className={styles.container}>
-                    <img src={product.image} alt="no image" />
+                    <img src={images[product.id - 1]} alt="no image" />
                     <div className={styles.details}>
                         <div className={styles.description}>
                             <h2>{product.title}</h2>
