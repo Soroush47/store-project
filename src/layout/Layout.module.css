@@ -6,7 +6,7 @@
 }
 
 .header {
-    /* position: fixed; */
+    position: relative;
     /* width: 100%; */
     background-color: #cf4366; /*162843*/
     border-radius: 15px;
@@ -53,8 +53,8 @@
 
 .header span {
     position: absolute;
-    right: 185px;
-    top: 14px;
+    right: 17px;
+    top: 4px;
     color: #fff;
     background-color: #000;
     border-radius: 14px;
@@ -79,9 +79,3 @@
     height: 60px;
     font-weight: 600;
 }
-
-/* @media (max-width : 552px) {
-    .container{
-        width: calc(100% - 10px);
-    }
-} */
