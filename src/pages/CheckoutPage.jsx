@@ -6,6 +6,8 @@ import { MdOutlineProductionQuantityLimits as Quantity } from "react-icons/md";
 import { IoCheckmarkCircle as Check } from "react-icons/io5";
 import { TbChecklist } from "react-icons/tb";
 
+import images from "../constants/images";
+
 function CheckoutPage() {
     const { totalCost, totalItems, chosenProducts, dispatch } = useProducts();
 
@@ -57,7 +59,7 @@ function CheckoutPage() {
                     <div className={styles.products}>
                         {Object.values(chosenProducts).map(product => (
                             <div className={styles.product} key={product.id}>
-                                <img src={product.image} alt="no image" />
+                                <img src={images[product.id - 1]} alt="no image" />
                                 <p>{product.title} </p>
                                 <div className={styles.count}>
                                     <span>Price: {product.price}$</span>
@@ -91,7 +93,10 @@ function CheckoutPage() {
                     </div>
                 </div>
             ) : (
-                <div className={styles.empty}> <span>Your basket is empty!</span> </div>
+                <div className={styles.empty}>
+                    {" "}
+                    <span>Your basket is empty!</span>{" "}
+                </div>
             )}
         </>
     );
