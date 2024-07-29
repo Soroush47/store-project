@@ -6,11 +6,11 @@ import { RiDeleteBin5Line as Delete } from "react-icons/ri";
 import { IoMdPricetag as Price } from "react-icons/io";
 
 import { useProducts } from "../context/ProductsProvider";
+import images from "../constants/images";
 import styles from "./ProductsCard.module.css";
 
 function ProductsCard({ data: product }) {
     const { dispatch, chosenProducts } = useProducts();
-
 
     const dispatchHandler = (id, count) => {
         dispatch({
@@ -22,9 +22,11 @@ function ProductsCard({ data: product }) {
         });
     };
 
+    console.log(product);
+
     return (
         <div className={styles.container}>
-            <img src={product.image} alt="no image" />
+            <img src={images[product.id - 1]} alt="no image" />
             <h3>{product.title}</h3>
             <span className={styles.price}>
                 <Price className={styles.priceTag} />
