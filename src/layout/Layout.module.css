@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 720px;
+    margin: auto;
+    max-width: 1200px;
+    min-height: 100vh;
 }
 
 .header {
@@ -59,6 +61,7 @@
     background-color: #000;
     border-radius: 14px;
     font-weight: 500;
+    font-size: 13px;
     width: 20px;
     height: 20px;
     display: flex;

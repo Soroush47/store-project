@@ -4,9 +4,9 @@
 }
 
 body {
-    margin: auto;
+    /* margin: auto;
     max-width: 1200px;
-    min-height: 100vh;
+    min-height: 100vh; */
     padding: 10px;
     background-color: #ffe8e4;
 }
