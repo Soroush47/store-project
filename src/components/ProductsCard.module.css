@@ -119,7 +119,7 @@
 @media (max-width: 500px) {
     .container {
         border-radius: 12px;
-        min-width: 115px;
+        min-width: 112px;
         max-width: 250px;
         width: 31%;
         margin: 0px 7px 20px 0px;
@@ -188,5 +188,17 @@
     .buttons span {
         font-weight: 500;
         font-size: 10px;
+    }
+}
+
+@media (max-width: 482px){
+    .container{
+        width: 47%;
+    }
+}
+
+@media (max-width: 363px){
+    .container{
+        width: 80%;
     }
 }
