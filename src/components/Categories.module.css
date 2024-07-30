@@ -56,7 +56,7 @@
     } */
 
     .container {
-        min-width: 115px;
+        min-width: 110px;
         min-height: 150px;
         border-radius: 12px;
         margin-left: 5px;
@@ -80,7 +80,7 @@
         padding: 1px 5px 1px;
         margin: 6px auto 0px;
         font-size: 10px;
-        width: 95px
+        width: 93px
     }
 
     .hover:hover {
