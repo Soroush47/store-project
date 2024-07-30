@@ -119,37 +119,36 @@
 @media (max-width: 500px) {
     .container {
         border-radius: 12px;
-        min-width: 105px;
+        min-width: 125px;
         max-width: 250px;
         width: 31%;
         margin: 0px 7px 20px 0px;
-        box-shadow: 0px 0px 15px 5px #16284325;
     }
 
     .container img {
-        height: 70px;
-        width: 63px;
+        height: 85px;
+        width: 75px;
         border-radius: 5px;
         margin: 15px auto 17px;
     }
 
     .container h3 {
         margin-left: 0px;
-        font-size: 9px;
-        height: 20px;
+        font-size: 10px;
+        height: 30px;
         text-align: center;
         padding: 0px 2px;
     }
 
     .price {
         font-weight: 500;
-        font-size: 7px;
+        font-size: 9px;
         margin: 10px 0px 8px 16px;
     }
 
     .priceTag {
         margin-right: 3px;
-        font-size: 8px;
+        font-size: 10px;
     }
 
     .functions {
@@ -157,37 +156,37 @@
     }
 
     .functions a {
-        height: 24px;
+        height: 22px;
     }
 
     .buttons {
-        width: 42px;
+        width: 48px;
     }
 
     .button {
         border-radius: 3px;
-        padding: 3px;
-        font-size: 13px;
+        padding: 4px;
+        font-size: 15px;
     }
 
     .delete {
         border-radius: 3px;
         padding: 2px;
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .details {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .shopping {
-        font-size: 13px;
+        font-size: 15px;
         border-radius: 3px;
         padding: 2px;
     }
 
     .buttons span {
         font-weight: 500;
-        font-size: 8px;
+        font-size: 10px;
     }
 }
