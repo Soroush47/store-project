@@ -50,14 +50,42 @@
     border-radius: 7px;
 }
 
-@media (max-width: 440px){
-    .container{
+@media (max-width: 500px) {
+    /* .container{
         min-width: calc(100% - 228px)
-    }
-}
+    } */
 
-@media (max-width: 405px){
-    .container{
-        min-width: 158px
+    .container {
+        min-width: 100px;
+        min-height: 150px;
+        border-radius: 12px;
+        margin-left: 5px;
+        padding: 15px 7px;
+    }
+
+    .listIcon {
+        margin-top: 3px;
+        margin-left: 2px;
+    }
+
+    .container h3 {
+        margin-bottom: 13px;
+        font-size: 11px;
+    }
+
+    .container p {
+        font-weight: 500;
+        padding: 1px 5px 1px;
+        margin: 6px auto 0px;
+        font-size: 8px;
+        width: 84px
+    }
+
+    .hover:hover {
+        border-radius: 4px;
+    }
+
+    .selected {
+        border-radius: 4px;
     }
 }

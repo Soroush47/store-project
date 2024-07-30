@@ -5,10 +5,14 @@
     background-color: #fefbf4; /*f9f3e4*/
     /* border: solid 1px #162843; */
     border-radius: 18px;
-    width: 280px;
+    min-width: 240px;
+    max-width: 350px;
+    width: 31%;
+    /* min-width: 240px; */
+    /* width: max-content; */
     display: flex;
     flex-direction: column;
-    margin: 0px 5px 40px 0px;
+    margin: 0px 15px 40px 0px;
     box-shadow: 0px 0px 15px 5px #16284325;
 }
 
@@ -100,14 +104,90 @@
     font-size: 16px;
 }
 
-@media (max-width: 516px){
-    .container{
-        width: calc(100% - 5px);
+@media (max-width: 1010px) {
+    .container {
+        width: 45%;
     }
 }
 
-@media (max-width: 440px){
-    .container{
-        width: 203px;
+@media (max-width: 750px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        border-radius: 12px;
+        min-width: 105px;
+        max-width: 250px;
+        width: 31%;
+        margin: 0px 7px 20px 0px;
+        box-shadow: 0px 0px 15px 5px #16284325;
+    }
+
+    .container img {
+        height: 70px;
+        width: 63px;
+        border-radius: 5px;
+        margin: 15px auto 17px;
+    }
+
+    .container h3 {
+        margin-left: 0px;
+        font-size: 9px;
+        height: 20px;
+        text-align: center;
+        padding: 0px 2px;
+    }
+
+    .price {
+        font-weight: 500;
+        font-size: 7px;
+        margin: 10px 0px 8px 16px;
+    }
+
+    .priceTag {
+        margin-right: 3px;
+        font-size: 8px;
+    }
+
+    .functions {
+        margin: 0px 15px 3px;
+    }
+
+    .functions a {
+        height: 24px;
+    }
+
+    .buttons {
+        width: 42px;
+    }
+
+    .button {
+        border-radius: 3px;
+        padding: 3px;
+        font-size: 13px;
+    }
+
+    .delete {
+        border-radius: 3px;
+        padding: 2px;
+        font-size: 13px;
+    }
+
+    .details {
+        font-size: 13px;
+    }
+
+    .shopping {
+        font-size: 13px;
+        border-radius: 3px;
+        padding: 2px;
+    }
+
+    .buttons span {
+        font-weight: 500;
+        font-size: 8px;
     }
 }
