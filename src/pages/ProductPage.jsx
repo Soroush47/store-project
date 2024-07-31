@@ -8,10 +8,15 @@ import { useProductsDetails } from "../context/ProductsProvider";
 import images from "../constants/images";
 import styles from "./ProductPage.module.css";
 import Loader from "../components/Loader";
+import { useEffect } from "react";
 
 function ProductPage() {
     const { id } = useParams();
     const product = useProductsDetails(id);
+
+    useEffect(() => {
+        window.scroll(0, 0);
+    });
     return (
         <>
             {!product ? (

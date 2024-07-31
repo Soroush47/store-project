@@ -7,9 +7,14 @@ import { IoCheckmarkCircle as Check } from "react-icons/io5";
 import { TbChecklist } from "react-icons/tb";
 
 import images from "../constants/images";
+import { useEffect } from "react";
 
 function CheckoutPage() {
     const { totalCost, totalItems, chosenProducts, dispatch } = useProducts();
+
+    useEffect(() => {
+        window.scroll(0, 0);
+    });
 
     const getTitle = title => {
         title = title.split(" ");
