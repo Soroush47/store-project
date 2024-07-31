@@ -19,9 +19,9 @@ function ProductsPage() {
 
     const [searchParams, setSearchParams] = useSearchParams();
 
-    useEffect(() => {
-        window.scroll(0, 0);
-    });
+    // useEffect(() => {
+    //     window.scroll(0, 0);
+    // });
 
     useEffect(() => {
         // console.log("products page use effect");
