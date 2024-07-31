@@ -13,10 +13,10 @@ function App() {
         <ProductsProvider>
             <Layout>
                 <Routes>
-                    <Route path="/" element={<Navigate to="products" replace />} />
-                    <Route path="products" element={<ProductsPage />} />
-                    <Route path="products/:id" element={<ProductPage />} />
-                    <Route path="checkout" element={<CheckoutPage />} />
+                    <Route path="/" element={<Navigate to="/products" replace />} />
+                    <Route path="/products" element={<ProductsPage />} />
+                    <Route path="/products/:id" element={<ProductPage />} />
+                    <Route path="/checkout" element={<CheckoutPage />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </Layout>
