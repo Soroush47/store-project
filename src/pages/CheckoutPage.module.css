@@ -56,10 +56,10 @@
 }
 .product {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
-    padding: 20px;
     margin-bottom: 20px;
+    padding: 5px 20px;
     box-shadow: 0px 0px 15px 0px #8a8a8a;
     /* border: dotted 3px #cfcfcf; */
     border-radius: 20px;
@@ -70,22 +70,33 @@
     /* mix-blend-mode: darken; */
     height: 55px;
     width: 50px;
+    margin-right: 5px;
 }
 
-.product p {
-    font-weight: 500;
+.title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .count {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 24px 0px 5px;
 }
 
-.count span {
-    margin-right: 25px;
+.count p {
+    font-weight: 500;
+    width: 80%;
+    text-align: center;
+}
+
+.title span {
     color: #919191;
     font-weight: 400;
     font-size: 15px;
+    text-align: end;
 }
 
 .buttons {
@@ -127,4 +138,176 @@
     padding: 100px 60px;
     font-size: 20px;
     box-shadow: 0px 0px 5px 1px #000;
+}
+
+@media (max-width: 800px) {
+    .details {
+        border-radius: 15px;
+        height: max-content;
+        padding: 35px 20px 20px 20px;
+        width: 30%;
+        min-width: 175px;
+        margin-right: 15px;
+    }
+
+    .details p {
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+
+    .details span {
+        margin-right: 8px;
+    }
+
+    .icon {
+        margin-right: 3px;
+        font-size: 15px;
+    }
+
+    .details button {
+        border-radius: 7px;
+        margin-top: 40px;
+        font-weight: 600;
+    }
+
+    .product {
+        padding: 5px 20px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+    }
+
+    .product img {
+        height: 50px;
+        width: 45px;
+    }
+
+    .product p {
+        font-size: 13px;
+    }
+
+    .title span {
+        font-size: 11px;
+    }
+
+    .buttons {
+        width: 70px;
+        font-size: 14px;
+    }
+
+    .button {
+        border-radius: 4px;
+        padding: 5px;
+        font-size: 21px;
+    }
+
+    .delete {
+        border-radius: 4px;
+        padding: 3px;
+        font-size: 21px;
+    }
+
+    .empty {
+        display: flex;
+        justify-content: center;
+    }
+
+    .empty span {
+        margin-top: 100px;
+        background-color: #282828;
+        color: #ffe6f2;
+        max-width: 400px;
+        border-radius: 10px;
+        padding: 100px 60px;
+        font-size: 20px;
+        box-shadow: 0px 0px 5px 1px #000;
+    }
+}
+
+@media (max-width: 400px) {
+    .details {
+        border-radius: 15px;
+        height: max-content;
+        padding: 20px 10px 15px;
+        width: 30%;
+        min-width: 120px;
+        margin-right: 10px;
+    }
+
+    .details p {
+        margin-bottom: 15px;
+        font-size: 10px;
+    }
+
+    .details span {
+        margin-right: 8px;
+    }
+
+    .icon {
+        margin-right: 3px;
+        font-size: 11px;
+    }
+
+    .details button {
+        border-radius: 7px;
+        margin-top: 40px;
+        font-weight: 600;
+    }
+
+    .product {
+        padding: 0px 7px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
+
+    .product img {
+        height: 35px;
+        width: 30px;
+    }
+
+    .product p {
+        font-size: 9px;
+    }
+
+    .title span {
+        font-size: 7px;
+        margin-right: 3px;
+    }
+
+    .count{
+        padding: 16px 0px 5px;
+
+    }
+
+    .buttons {
+        max-width: 40px;
+        font-size: 8px;
+    }
+
+    .button {
+        border-radius: 2px;
+        padding: 3px;
+        font-size: 11px;
+    }
+
+    .delete {
+        border-radius: 2px;
+        padding: 1px;
+        font-size: 11px;
+    }
+
+    .empty {
+        display: flex;
+        justify-content: center;
+    }
+
+    .empty span {
+        margin-top: 100px;
+        background-color: #282828;
+        color: #ffe6f2;
+        max-width: 400px;
+        border-radius: 10px;
+        padding: 100px 60px;
+        font-size: 20px;
+        box-shadow: 0px 0px 5px 1px #000;
+    }
 }

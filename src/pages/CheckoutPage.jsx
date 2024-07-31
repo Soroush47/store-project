@@ -34,21 +34,21 @@ function CheckoutPage() {
                         <p>
                             <span>
                                 <TbChecklist className={styles.icon} />
-                                Total:
+                                Total :
                             </span>
                             {totalCost} $
                         </p>
                         <p>
                             <span>
                                 <Quantity className={styles.icon} />
-                                Quantity:
+                                Quantity :
                             </span>
                             {totalItems}
                         </p>
                         <p>
                             <span>
                                 <Check className={styles.icon} />
-                                Status:
+                                Status :
                             </span>
                             pending...
                         </p>
@@ -60,33 +60,36 @@ function CheckoutPage() {
                         {Object.values(chosenProducts).map(product => (
                             <div className={styles.product} key={product.id}>
                                 <img src={images[product.id - 1]} alt="no image" />
-                                <p>{product.title} </p>
-                                <div className={styles.count}>
-                                    <span>Price: {product.price}$</span>
-                                    <div className={styles.buttons}>
-                                        {product.count === 1 ? (
-                                            <Delete
-                                                className={styles.delete}
-                                                onClick={() =>
-                                                    dispatchHandler(product.id, -1)
-                                                }
-                                            />
-                                        ) : (
-                                            <Minus
+                                <div className={styles.title}>
+                                    <div className={styles.count}>
+                                        <p>{product.title} </p>
+                                        <div className={styles.buttons}>
+                                            {product.count === 1 ? (
+                                                <Delete
+                                                    className={styles.delete}
+                                                    onClick={() =>
+                                                        dispatchHandler(product.id, -1)
+                                                    }
+                                                />
+                                            ) : (
+                                                <Minus
+                                                    className={styles.button}
+                                                    onClick={() =>
+                                                        dispatchHandler(product.id, -1)
+                                                    }
+                                                />
+                                            )}
+                                            {product.count}
+                                            <Plus
                                                 className={styles.button}
                                                 onClick={() =>
-                                                    dispatchHandler(product.id, -1)
+                                                    dispatchHandler(product.id, +1)
                                                 }
                                             />
-                                        )}
-                                        {product.count}
-                                        <Plus
-                                            className={styles.button}
-                                            onClick={() =>
-                                                dispatchHandler(product.id, +1)
-                                            }
-                                        />
+                                        </div>
                                     </div>
+
+                                    <span>Price: {product.price}$</span>
                                 </div>
                             </div>
                         ))}
@@ -94,7 +97,6 @@ function CheckoutPage() {
                 </div>
             ) : (
                 <div className={styles.empty}>
-                    {" "}
                     <span>Your basket is empty!</span>{" "}
                 </div>
             )}
