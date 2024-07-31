@@ -8,7 +8,6 @@ import CheckoutPage from "./pages/CheckoutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
-
     return (
         <ProductsProvider>
             <Layout>
