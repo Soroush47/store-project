@@ -166,14 +166,14 @@
 
     .container img {
         height: 230px;
-        width: 230px;
+        width: 200px;
         padding: 0px;
         margin-bottom: 40px;
     }
 
     .details {
         border-radius: 20px;
-        margin-left: 0px;
+        margin: 0px 15px;
         padding: 20px;
         display: flex;
         flex-direction: column;
