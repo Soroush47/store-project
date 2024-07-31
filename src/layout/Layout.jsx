@@ -15,15 +15,23 @@ function Layout({ children }) {
                     <Link to="/products" className={styles.shop}>
                         OnlineShop
                     </Link>
-                    <Link to="/checkout">
-                        {!!totalItems && <span>{totalItems}</span>}
-                        <Basket className={styles.basket} />
-                    </Link>
+                    <div className={styles.myLink}>
+                        <a href="https://github.com/Soroush47" className={styles.a}>
+                            My Github
+                        </a>
+                        | React.js Project
+                        <Link to="/checkout" className={styles.basketButton}>
+                            {!!totalItems && <span>{totalItems}</span>}
+                            <Basket className={styles.basket} />
+                        </Link>
+                    </div>
                 </header>
-                {children}
+                <div className={styles.body}>{children}</div>
             </div>
             <footer className={styles.footer}>
-                <p>Developed by Soroush Ghasemi</p>
+                <p>
+                    Developed by <span>Soroush Ghasemi</span>
+                </p>
             </footer>
         </div>
     );
