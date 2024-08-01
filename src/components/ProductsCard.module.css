@@ -134,25 +134,25 @@
 
     .container h3 {
         margin-left: 0px;
-        font-size: 10px;
-        height: 30px;
+        font-size: 11px;
+        height: 28px;
         text-align: center;
         padding: 0px 2px;
     }
 
     .price {
         font-weight: 500;
-        font-size: 9px;
-        margin: 10px 0px 8px 16px;
+        font-size: 11px;
+        margin: 10px 0px 15px 16px;
     }
 
     .priceTag {
         margin-right: 3px;
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .functions {
-        margin: 0px 15px 3px;
+        margin: 0px 10px 5px;
     }
 
     .functions a {
@@ -160,38 +160,38 @@
     }
 
     .buttons {
-        width: 48px;
+        width: 54px;
     }
 
     .button {
-        border-radius: 3px;
+        border-radius: 4px;
         padding: 4px;
-        font-size: 15px;
+        font-size: 17px;
     }
 
     .delete {
-        border-radius: 3px;
+        border-radius: 4px;
         padding: 2px;
-        font-size: 15px;
+        font-size: 17px;
     }
 
     .details {
-        font-size: 15px;
+        font-size: 17px;
     }
 
     .shopping {
-        font-size: 15px;
+        font-size: 17px;
         border-radius: 3px;
-        padding: 2px;
+        padding: 1px;
     }
 
     .buttons span {
         font-weight: 500;
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 
-@media (max-width: 482px){
+@media (max-width: 492px){
     .container{
         width: 47%;
     }
