@@ -223,45 +223,46 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 550px) {
     .details {
         border-radius: 15px;
         height: max-content;
-        padding: 20px 12px 15px;
+        padding: 20px 10px 15px;
         width: 30%;
-        min-width: 130px;
+        min-width: 113px;
         margin-right: 10px;
     }
 
     .details p {
-        margin-bottom: 7px;
-        font-size: 10px;
+        margin-bottom: 10px;
+        font-size: 9px;
     }
 
     .details span {
-        margin-right: 8px;
+        margin-right: 5px;
     }
 
     .icon {
         margin-right: 3px;
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .details button {
         border-radius: 7px;
         margin-top: 40px;
         font-weight: 600;
+        font-size: 12px;
     }
 
     .product {
-        padding: 2px 7px;
+        padding: 2px 5px;
         margin-bottom: 15px;
         border-radius: 10px;
     }
 
     .product img {
-        height: 40px;
-        width: 35px;
+        height: 35px;
+        width: 30px;
     }
 
     .product p {
@@ -273,26 +274,25 @@
         margin-right: 3px;
     }
 
-    .count{
+    .count {
         padding: 16px 0px 5px;
-
     }
 
     .buttons {
         max-width: 40px;
-        font-size: 9px;
+        font-size: 10px;
     }
 
     .button {
         border-radius: 2px;
         padding: 3px;
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .delete {
         border-radius: 2px;
-        padding: 1px;
-        font-size: 12px;
+        padding: 2px;
+        font-size: 13px;
     }
 
     .empty {
